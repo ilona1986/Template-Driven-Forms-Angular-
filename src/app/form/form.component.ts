@@ -17,7 +17,11 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit(): void {
+    console.log('Форма отправлена');
+  }
+
   errorsLog(d: any): void {
-    
+
   }
 }
