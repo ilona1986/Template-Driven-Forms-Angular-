@@ -16,4 +16,8 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  errorsLog(d: any): void {
+    
+  }
 }
