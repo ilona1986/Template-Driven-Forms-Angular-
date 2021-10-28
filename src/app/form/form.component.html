@@ -2,24 +2,19 @@
 
   <div class="mb-3">
     <label class="form-label" for="name">Имя:</label>
-    <input #name="ngModel" (click)="errorsLog(name)" [(ngModel)]="model.name" class="form-control" id="name"
+    <input #name="ngModel" [(ngModel)]="model.name" class="form-control" id="name"
            maxlength="15"
            minlength="2"
            name="name"
            required
            type="text">
-    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
-      <div *ngIf="name.errors?.required">Имя обязательно.</div>
-      <div *ngIf="name.errors?.minlength">Имя должно содержать минимум 2 символа.</div>
-    </div>
+    <div *ngIf="formErrors.name" class="alert alert-danger">{{formErrors.name}}</div>
   </div>
 
   <div class="mb-3">
     <label class="form-label" for="age">Возраст:</label>
     <input #age="ngModel" [(ngModel)]="model.age" class="form-control" id="age" name="age" required type="number">
-    <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
-      <div *ngIf="age.errors?.required">Возраст обязателен.</div>
-    </div>
+    <div *ngIf="formErrors.age" class="alert alert-danger">{{formErrors.age}}</div>
   </div>
 
   <div class="mb-3">
